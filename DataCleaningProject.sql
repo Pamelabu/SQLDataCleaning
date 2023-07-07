@@ -15,7 +15,6 @@ ALTER COLUMN SaleDate Date
 
 SELECT * 
 FROM PortfolioProject.dbo.NashvilleHousing
---WHERE PropertyAddress is null
 ORDER BY ParcelID
 
 SELECT a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ISNULL(a.PropertyAddress, b.PropertyAddress)
@@ -38,8 +37,6 @@ WHERE a.PropertyAddress is null
 
 SELECT PropertyAddress
 FROM PortfolioProject.dbo.NashvilleHousing
---WHERE PropertyAddress is null
---ORDER BY ParcelID
 
 SELECT SUBSTRING(PropertyAddress, 1, CHARINDEX(',', PropertyAddress)-1) as Address,
 SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddress)+1, LEN(PropertyAddress)) as City
